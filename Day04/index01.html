@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="js/angular.min.js"></script>
+<body ng-app="mModule">
+    <div ng-controller="mainCtrl">
+        <h1>{{data}}</h1>
+       <input type="text" ng-model="nameModel">
+     
+  
+    <button ng-click="Update(nameModel)">Add</button>
+</div>
+<script>
+var  myApp = angular.module("mModule",[]);
+myApp.controller('mainCtrl',function($scope){
+      $scope.count=0;
+    $scope.IncrementCount= function(){
+        $scope.count +=1;
+    }
+   
+    $scope.data = "Ahmed";
+       $scope.Update =function(nName){
+        $scope.data = nName;
+    }
+ 
+
+
+});
+
+</script>
+</body>
+</html>

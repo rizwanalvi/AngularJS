@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="js/angular.min.js"></script>
+<body ng-app="mModule">
+    <div ng-controller="mainCtrl">
+        <input type="text" ng-model ="txtdata">
+        <button ng-click="addData(txtdata)" >Add</button>
+        <ul ng-repeat = 'item in list'>
+            <li>{{item}}</li>
+        </ul>
+</div>
+<script>
+var  myApp = angular.module("mModule",[]);
+myApp.controller('mainCtrl',function($scope){
+  $scope.list = [];
+  $scope.addData=function(nData){
+      $scope.list.push(nData);
+  }
+ 
+
+
+});
+
+</script>
+</body>
+</html>

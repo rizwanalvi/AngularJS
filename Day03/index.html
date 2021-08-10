@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body ng-app ="myMd" ng-controller="StdCtl">
+    {{name}}
+    <ul ng-repeat ='x in Student'>
+        <li>{{x}}</li>
+    </ul>
+
+    <ul>
+        <li>{{objStd.id  }}{{objStd.name}}</li>
+    </ul>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <tr ng-repeat = 'x in objStds |limitTo:2'>
+            <td>{{x.id}}</td>
+            <td>{{x.name}}</td>
+            <td>{{count}}</td>
+            <td><button ng-click="AddLikes()">Likes</button></td>
+        </tr>
+    </table>
+    <script>
+        var myApp = angular.module("myMd",[]);
+        myApp.controller("StdCtl",function($scope){
+            $scope.name= "Apple";
+            $scope.Student = ["Ahmed","Noman"];
+            $scope.objStd = {id:100,name:'Ahmed Khan',batchid:'2010D'};
+            $scope.objStds = [{id:101,name:'Salman Khan',batchid:'2010D'},
+            {id:102,name:'Imran Khan',batchid:'2010D'},
+            {id:103,name:'Farhan Khan',batchid:'2010D'},
+            {id:104,name:'Mushtaq Khan',batchid:'2010D'}]
+            $scope.count =0;
+            $scope.AddLikes = function(){
+                $scope.count +=1 ;
+
+            }
+        });
+    </script>
+</body>
+</html>

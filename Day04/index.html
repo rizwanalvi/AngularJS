@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<script src="js/angular.min.js"></script>
+<body ng-app="mModule">
+    <div ng-controller="mainCtrl">
+        <table class="table">
+            <tr>
+                <th>Technology</th>
+                <th>Likes</th>
+                <th>Dislikes</th>
+            </tr>
+            <tr ng-repeat ='technology in tech'>
+                <td>{{technology.name}}</td>
+                <td>{{technology.likes}}</td>
+                <td>{{technology.dislikes}}</td>
+                <td><div class="btn btn-group">
+               <button class="btn btn-success" ng-click="IncrementLikes(technology)">Likes</button>
+                    <button class="btn btn-danger" ng-click="IncrementDislikes(technology)">Dislikes</button>
+               
+                </div></td>
+            </tr>
+        </table>
+        <input type="checkbox" ng-model="chk">
+        <div ng-show="chk">
+      <div ng-include="'tab.html'"></div>
+    </div>
+</div>
+<script>
+var  myApp = angular.module("mModule",[]);
+myApp.controller('mainCtrl',function($scope){
+  let tech = [{name:'C#',likes:0,dislikes:0},
+  {name:'Java',likes:0,dislikes:0},
+  {name:'PHP',likes:0,dislikes:0}];
+  $scope.tech = tech;
+  $scope.IncrementLikes= function(technology){
+    technology.likes +=1;
+    
+  }
+  $scope.IncrementDislikes= function(technology){
+    technology.dislikes +=1;
+    
+  }
+
+});
+
+</script>
+</body>
+</html>
