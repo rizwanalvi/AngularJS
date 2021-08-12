@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="js/angular.min.js"></script>
+</head>
+<body ng-app ="mCrud">
+    <div ng-controller="CrudController">
+        <ul ng-repeat="x in items">
+            <li>{{$index}}{{x}} <button ng-click="editItem($index)">Edit</button>
+                <button ng-click="deleteItem($index)">Delete</button>
+            </li>
+        </ul>
+        <form >
+            <input type="text" ng-model="item.product">
+            <input type="number" ng-model="item.quantity">
+            <button ng-hide="edit" ng-click="addItem()">Add Item</button>
+            <button ng-show="edit" ng-click="applyChange()">Save</button>
+        </form>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
