@@ -11,7 +11,7 @@
         <h1 class="display-3">Mobile Bazar</h1>
         <p class="lead">You can find new Cost Effetive phone</p>
         <hr class="my-2">
-        <p>This side provide estimated cost not the mark selling cost</p>
+        <p>This side provide estimated cost not the actual selling cost</p>
         <p class="lead">
             <!-- <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a> -->
         </p>
@@ -35,7 +35,7 @@
 
   </div>
 </div>
-        <ul ng-repeat="x in phones | filter : searchText | orderBy:orderProp ">
+        <!-- <ul ng-repeat="x in phones | filter : searchText | orderBy:orderProp ">
             <li>
                     {{x.id | uppercase}}
                     <a href="#!/phones/{{x.id}}">{{x.name}}</a>
@@ -45,7 +45,7 @@
           <ul class="pagination" ng-repeat="x in numOfPages()" >
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
             
-          </ul>
+          </ul> -->
         </nav> 
 </body>
 </html>
