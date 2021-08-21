@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   
+</head>
+<body >
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-6">
+                <img src={{msg[0].imageUrl}} class="img-fluid" alt="...">
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item h5">{{msg[0].name}}</li>
+                    <li class="list-group-item">{{msg[0].snippet}}</li>
+                    <li class="list-group-item">{{msg[0].id}}</li>
+                    <li class="list-group-item"> <a href="#" class="btn btn-primary btn-sm">Main</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+     {{msg[0].id}}
+
+</body>
+</html>

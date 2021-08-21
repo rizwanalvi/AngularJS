@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron" ng-show="!searchText.id">
+        <h1 class="display-3">Mobile Bazar</h1>
+        <p class="lead">You can find new Cost Effetive phone</p>
+        <hr class="my-2">
+        <p>This side provide estimated cost not the mark selling cost</p>
+        <p class="lead">
+            <!-- <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a> -->
+        </p>
+    </div>
+ <div class="jumbotron">      
+  <div class="row row-cols-1 row-cols-md-3 container-fluid" >
+    <div class="row " ng-repeat="x in phones | filter : searchText | orderBy:orderProp ">
+      <div class="col mb-4 ml-5">
+        <div class="card">
+          <img ng-src="{{x.imageUrl}}" class="card-img-top img-thumbnail" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{x.name | uppercase}}</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#!/phones/{{x.id}}" class="btn btn-primary btn-sm">{{x.name}}</a>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+
+  </div>
+</div>
+        <ul ng-repeat="x in phones | filter : searchText | orderBy:orderProp ">
+            <li>
+                    {{x.id | uppercase}}
+                    <a href="#!/phones/{{x.id}}">{{x.name}}</a>
+                </li>
+        </ul>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination" ng-repeat="x in numOfPages()" >
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            
+          </ul>
+        </nav> 
+</body>
+</html>
