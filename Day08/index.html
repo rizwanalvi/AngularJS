@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app ="mModule" ng-controller="ValidateController">
+<div class="row jumbotron">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <ng-form name='frm'>
+            <div class="form-group">
+                <label for="">Enter Your Name</label>
+                <input type="text"  name ="fname" class="form-control" ng-pattern="reg" ng-model="fname">
+               
+                <span ng-show ="frm.fname.$error.pattern" class="alert-danger" >Is not valid</span>
+                <input type="text"  name ="number" class="form-control" ng-pattern="num" ng-model="number">
+                <span ng-show ="frm.number.$error.pattern" class="alert-danger" >Is not valid</span>
+                <input type="text" name="" id="" ng-model='data'>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-secondary">
+           </div>
+        </ng-form>
+      
+    </div>
+    <div class="col-md-4">
+        <!-- <div ng-Faizan></div> -->
+        <div class=ng-Faizan></div>
+        <!-- <ng-Faizan></ng-Faizan> -->
+    </div> 
+</div>
+<script>
+let myApp = angular.module('mModule',[]);
+myApp.controller('ValidateController',function($scope){
+    $scope.reg = /[0-9]{4}-[0-9]{4}-/;
+    $scope.num = /[0-9]/;
+    $scope.data ='ok'
+})
+
+myApp.directive('ngFaizan',function(){
+
+   return {
+       templateUrl :'tem01.html',
+       restrict :'C'
+   }
+})
+
+
+</script>
+</body>
+</html>
