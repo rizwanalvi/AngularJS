@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid" ng-hide="search.id">
+        <div class="container">
+            <h1 class="display-3">Mobile Bazar</h1>
+            <p class="lead">Jumbo helper text</p>
+            <hr class="my-2 bg-dark">
+            <p>More info</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+            </p>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4">
+        <div class="col mb-4" ng-repeat ='x in phones | filter :search.id'>
+            <div class="card">
+              <img ng-src="{{x.imageUrl}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{x.name}}</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a class="btn btn-success btn-sm" href="#!phdetail/{{x.id}}">More</a> 
+            </div>
+          
+            </div>
+          </div>
+      </div>
+</body>
+</html>

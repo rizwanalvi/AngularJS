@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row jumbotron">
+        <div class="col-md-6">
+            <img src="{{phId.imageUrl}}" alt="">
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item"><h6>{{phId.name}}</h6></li>
+                <li class="list-group-item"><h6>{{phId.snippet}}</h6></li>
+                <li class="list-group-item"><h6>{{phId.name}}</h6></li>
+                <li class="list-group-item"><h6>{{phId.name}}</h6></li>
+                <li class="list-group-item"><a href="#" class="btn btn-success btn-sm">Main</a></li>
+                <li class="list-group-item"><button class="btn btn-info btn-sm" ng-click="AddCart({{phId.id}})">Add To Cart</button></li>
+            </ul>
+        </div>
+    </div>
+   
+</body>
+</html>
